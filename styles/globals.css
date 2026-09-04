@@ -1,0 +1,7 @@
+html,
+body,
+#__next {
+  min-height: 100%;
+  margin: 0;
+  background: #ffffff;
+}

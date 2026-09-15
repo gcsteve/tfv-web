@@ -14,9 +14,9 @@ export default function Layout({ lang, children }: LayoutProps) {
   const isZh = lang === "zh-HK";
 
   const nav = [
-    { label: isZh ? "理念" : "Point of View", href: "#point-of-view" },
-    { label: isZh ? "方向" : "Focus", href: "#focus" },
-    { label: isZh ? "合作" : "Collaborate", href: "#collaborate" }
+    { label: isZh ? "活動" : "Events", href: "#events" },
+    { label: isZh ? "能力" : "Capabilities", href: "#capabilities" },
+    { label: isZh ? "合作" : "Connect", href: "#connect" }
   ];
 
   const getCurrentPathForLang = (targetLang: "zh-HK" | "en") => {
@@ -92,8 +92,8 @@ export default function Layout({ lang, children }: LayoutProps) {
             <p className="font-serif-brand text-xl">The Fashion Ventures</p>
             <p className="mt-2 max-w-xl text-sm leading-6 text-white/60">
               {isZh
-                ? "連結時尚創意、品牌營運與長期資本，與新世代品牌一起建立可持續增長。"
-                : "Connecting fashion creativity, brand operations, and patient capital for the next generation of growth brands."}
+                ? "Strategy. Marketing. Digital. Retail. Logistics. 以內部團隊把品牌帶到市場。"
+                : "Strategy. Marketing. Digital. Retail. Logistics. Built in-house to bring brands to market."}
             </p>
           </div>
           <p className="text-sm text-white/50">

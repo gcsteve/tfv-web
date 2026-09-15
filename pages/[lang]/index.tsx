@@ -165,12 +165,12 @@ export default function HomePage({ lang }: Props) {
             <img
               src="/tfv-template/hero-portrait.jpg"
               alt=""
-              className="absolute bottom-0 right-[18%] h-[78%] w-[46%] object-cover grayscale"
+              className="absolute bottom-0 right-[18%] h-[78%] w-[46%] object-cover"
             />
             <img
               src="/tfv-template/hero-detail.png"
               alt=""
-              className="absolute right-0 top-5 h-[48%] w-[48%] object-cover grayscale"
+              className="absolute right-0 top-5 h-[48%] w-[48%] object-cover"
             />
             <img
               src="/tfv-template/tfv-logo-white.png"
@@ -202,7 +202,7 @@ export default function HomePage({ lang }: Props) {
                 <img
                   src={event.image}
                   alt=""
-                  className="absolute inset-0 h-full w-full object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                  className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/86 via-black/18 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6">
@@ -228,7 +228,7 @@ export default function HomePage({ lang }: Props) {
             <img
               src="/tfv-template/strategy-table.jpg"
               alt=""
-              className="aspect-[1.42] w-full object-cover grayscale"
+              className="aspect-[1.42] w-full object-cover"
             />
             {isZh && <p className="mt-6 text-lg leading-8 text-white/68">{copy.manifestoZh}</p>}
           </div>
@@ -258,8 +258,8 @@ export default function HomePage({ lang }: Props) {
       <section id="connect" className="bg-[#101010] px-4 py-20 text-white md:py-28">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_0.72fr] lg:items-center">
           <div className="grid grid-cols-2 gap-4">
-            <img src="/tfv-template/collab-left.jpg" alt="" className="aspect-[0.75] h-full w-full object-cover grayscale" />
-            <img src="/tfv-template/collab-right.jpg" alt="" className="mt-12 aspect-[0.75] h-full w-full object-cover grayscale" />
+            <img src="/tfv-template/collab-left.jpg" alt="" className="aspect-[0.75] h-full w-full object-cover" />
+            <img src="/tfv-template/collab-right.jpg" alt="" className="mt-12 aspect-[0.75] h-full w-full object-cover" />
           </div>
           <div className="lg:pl-8">
             <h2 className="font-serif-brand text-5xl font-semibold leading-tight tracking-normal md:text-7xl">

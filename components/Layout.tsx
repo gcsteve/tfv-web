@@ -28,11 +28,8 @@ export default function Layout({ lang, children }: LayoutProps) {
     <div className="min-h-screen bg-[#fbfaf8] text-neutral-950">
       <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-neutral-950/82 px-4 text-white backdrop-blur-xl">
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between">
-          <Link href={`/${lang}/`} className="flex items-center gap-3" aria-label="The Fashion Ventures home">
-            <span className="grid h-9 w-9 place-items-center border border-white/30 bg-white text-sm font-semibold text-neutral-950">
-              TFV
-            </span>
-            <span className="font-serif-brand text-lg tracking-normal">The Fashion Ventures</span>
+          <Link href={`/${lang}/`} className="flex items-center" aria-label="The Fashion Ventures home">
+            <img src="/images/Logo-TFV.svg" alt="The Fashion Ventures" className="h-9 w-auto" />
           </Link>
 
           <div className="hidden items-center gap-8 lg:flex">

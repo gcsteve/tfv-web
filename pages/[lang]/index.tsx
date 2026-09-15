@@ -140,6 +140,22 @@ export default function HomePage({ lang }: Props) {
     <Layout lang={lang}>
       <Seo lang={lang} path={`/${lang}/`} title={copy.title} description={copy.description} />
 
+      <section className="first-hero-section relative h-[100svh] min-h-[560px] overflow-hidden bg-neutral-950">
+        <div className="first-hero-grid h-full">
+          <div className="first-hero-panel first-hero-panel-one">
+            <img src="/tfv-template/hero-1.jpg" alt="" className="h-full w-full object-cover" />
+          </div>
+          <div className="first-hero-panel first-hero-panel-two">
+            <img src="/tfv-template/hero-2.jpg" alt="" className="h-full w-full object-cover" />
+          </div>
+        </div>
+        <img
+          src="/images/Logo-TFV.svg"
+          alt="The Fashion Ventures"
+          className="first-hero-logo pointer-events-none absolute left-1/2 top-1/2 z-10 h-auto -translate-x-1/2 -translate-y-1/2"
+        />
+      </section>
+
       <section className="relative overflow-hidden bg-[#0b0b0b] pt-16 text-white">
         <div className="mx-auto grid min-h-[calc(100vh-4rem)] max-w-7xl gap-10 px-4 py-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-end lg:py-16">
           <div className="relative z-10 pb-8 lg:pb-16">

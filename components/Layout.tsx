@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Menu, X } from "lucide-react";
@@ -10,6 +10,7 @@ type LayoutProps = {
 
 export default function Layout({ lang, children }: LayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [navVisibility, setNavVisibility] = useState(0);
   const router = useRouter();
   const isZh = lang === "zh-HK";
 
@@ -24,9 +25,31 @@ export default function Layout({ lang, children }: LayoutProps) {
     return `/${targetLang}${pathWithoutLang || "/"}`;
   };
 
+  useEffect(() => {
+    const updateNavVisibility = () => {
+      const fadeStart = 90;
+      const fadeDistance = 220;
+      const progress = Math.min(Math.max((window.scrollY - fadeStart) / fadeDistance, 0), 1);
+      setNavVisibility(progress);
+    };
+
+    updateNavVisibility();
+    window.addEventListener("scroll", updateNavVisibility, { passive: true });
+    return () => window.removeEventListener("scroll", updateNavVisibility);
+  }, []);
+
+  const headerVisibility = mobileMenuOpen ? 1 : navVisibility;
+
   return (
     <div className="min-h-screen bg-[#fbfaf8] text-neutral-950">
-      <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-neutral-950/82 px-4 text-white backdrop-blur-xl">
+      <header
+        className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-neutral-950/82 px-4 text-white backdrop-blur-xl transition duration-300"
+        style={{
+          opacity: headerVisibility,
+          pointerEvents: headerVisibility > 0.08 ? "auto" : "none",
+          transform: `translateY(${(1 - headerVisibility) * -16}px)`
+        }}
+      >
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between">
           <Link href={`/${lang}/`} className="flex items-center" aria-label="The Fashion Ventures home">
             <img src="/images/Logo-TFV.svg" alt="The Fashion Ventures" className="h-9 w-auto" />

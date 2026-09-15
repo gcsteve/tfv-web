@@ -63,7 +63,7 @@ export default function Layout({ lang, children }: LayoutProps) {
             ))}
             <Link
               href={getCurrentPathForLang(isZh ? "en" : "zh-HK")}
-              className="border border-white/25 px-3 py-2 text-sm text-white transition hover:bg-white hover:text-neutral-950"
+              className="hidden border border-white/25 px-3 py-2 text-sm text-white transition hover:bg-white hover:text-neutral-950"
             >
               {isZh ? "English" : "繁體中文"}
             </Link>

@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 type Locale = "zh-HK" | "en";
 
-const defaultLanguage: Locale = "zh-HK";
+const defaultLanguage: Locale = "en";
 
 function getPreferredLocale(languages: readonly string[]): Locale {
   const preferredLanguage = languages[0]?.toLowerCase();

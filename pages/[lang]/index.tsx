@@ -82,7 +82,7 @@ const content = {
     eventCta: "CHECK IT OUT",
     events: [
       { title: "The Amalfi Epoch", date: "June, 2035", image: "/tfv-template/event-amalfi.jpg" },
-      { title: "A Winter's Tale", date: "June, 2035", image: "/tfv-template/event-winter.jpg" },
+      { title: "A Winter's Tale", date: "June, 2035", image: "/tfv-template/262A2819.jpg" },
       { title: "Shadows of the City's Icon", date: "June, 2035", image: "/tfv-template/event-city.jpg" }
     ],
     manifesto:
@@ -156,7 +156,7 @@ export default function HomePage({ lang }: Props) {
         />
       </section>
 
-      <section className="relative overflow-hidden bg-[#0b0b0b] pt-16 text-white">
+      {/* <section className="relative overflow-hidden bg-[#0b0b0b] pt-16 text-white">
         <div className="mx-auto grid min-h-[calc(100vh-4rem)] max-w-7xl gap-10 px-4 py-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-end lg:py-16">
           <div className="relative z-10 pb-8 lg:pb-16">
             <p className="text-xs font-semibold tracking-[0.34em] text-white/54">{copy.heroKicker}</p>
@@ -195,21 +195,40 @@ export default function HomePage({ lang }: Props) {
             />
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="bg-white px-4 py-20 md:py-28">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="font-serif-brand max-w-5xl text-4xl font-semibold leading-[1.04] tracking-normal md:text-6xl lg:text-7xl">
-            {copy.heroTitle}
-            <span className="block">{copy.heroLines[0]}</span>
-            <span className="block">{copy.heroLines[1]}</span>
-          </h2>
-        </div>
+        <div className="mx-auto grid  max-w-7xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-top ">
+          <div className="relative z-10 pb-8 lg:pb-16">
+            <h2 className="font-serif-brand max-w-5xl text-4xl leading-[1.04] tracking-normal md:text-6xl lg:text-7xl">
+              {copy.heroTitle} {copy.heroLines[0]} {copy.heroLines[1]}
+              {/* <span className="block">{copy.heroLines[0]}</span>
+              <span className="block">{copy.heroLines[1]}</span> */}
+            </h2>
+          </div>
+          <div className="relative min-h-[520px] lg:min-h-[680px]">
+              <img
+                src="/tfv-template/hero-detail.png"
+                alt=""
+                className="absolute bottom-0 right-[18%] h-[78%] w-[46%] object-cover"
+              />
+              <img
+                src="/tfv-template/262A2329.jpg"
+                alt=""
+                className="absolute right-0 top-5 h-[48%] w-[48%] object-cover"
+              />
+              <img
+                src="/tfv-template/tfv-logo-black.svg"
+                alt="The Fashion Ventures"
+                className="absolute bottom-[8%] left-0 w-[58%] max-w-[320px]"
+              />
+            </div>
+          </div>
       </section>
 
       <section id="events" className="bg-[#f4f1eb] px-4 py-20 md:py-28">
         <div className="mx-auto max-w-7xl">
-          <h2 className="font-serif-brand text-4xl font-semibold tracking-normal md:text-6xl">
+          <h2 className="font-serif-brand text-4xl tracking-normal md:text-6xl">
             {copy.eventsTitle}
           </h2>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -222,12 +241,12 @@ export default function HomePage({ lang }: Props) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/86 via-black/18 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6">
-                  <h3 className="font-serif-brand text-3xl font-semibold leading-tight">{event.title}</h3>
+                  <h3 className="font-serif-brand text-2xl leading-tight">{event.title}</h3>
                   <p className="mt-2 text-sm text-white/70">{event.date}</p>
-                  <span className="mt-6 inline-flex items-center gap-3 border border-white/70 px-4 py-3 text-xs font-semibold tracking-[0.18em]">
+                  {/* <span className="mt-6 inline-flex items-center gap-3 border border-white/70 px-4 py-3 text-xs font-semibold tracking-[0.18em]">
                     {copy.eventCta}
                     <ArrowUpRight className="h-4 w-4" />
-                  </span>
+                  </span> */}
                 </div>
               </article>
             ))}
@@ -237,7 +256,7 @@ export default function HomePage({ lang }: Props) {
 
       <section className="bg-neutral-950 px-4 py-20 text-white md:py-28">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <blockquote className="font-serif-brand text-4xl font-semibold leading-[1.05] tracking-normal md:text-6xl">
+          <blockquote className="font-serif-brand text-4xl leading-[1.05] tracking-normal md:text-6xl">
             {copy.manifesto}
           </blockquote>
           <div>
@@ -253,18 +272,20 @@ export default function HomePage({ lang }: Props) {
 
       <section id="capabilities" className="bg-white px-4 py-20 md:py-28">
         <div className="mx-auto max-w-7xl">
-          <h2 className="font-serif-brand max-w-3xl text-4xl font-semibold leading-tight tracking-normal md:text-6xl">
+          <h2 className="font-serif-brand max-w-3xl text-xl md:text-2xl leading-tight tracking-normal font-semibold">
             {copy.capabilitiesTitle}
           </h2>
           <div className="mt-12 border-t border-neutral-950">
             {copy.capabilities.map((item, index) => (
               <article
                 key={item.title}
-                className="grid gap-5 border-b border-neutral-950/22 py-8 md:grid-cols-[90px_0.9fr_1.1fr] md:items-start"
+                className="grid gap-5 border-b border-neutral-950/22 py-8 md:grid-cols-[90px_1fr] md:items-start"
               >
                 <p className="font-serif-brand text-3xl text-neutral-400">{String(index + 1).padStart(2, "0")}</p>
-                <h3 className="text-2xl font-semibold leading-tight text-neutral-950">{item.title}</h3>
-                <p className="text-lg leading-8 text-neutral-600">{isZh ? item.bodyZh : item.body}</p>
+                <div>
+                  <h3 className="text-4xl md:text-6xl font-serif-brand leading-tight text-neutral-950">{item.title}</h3>
+                  <p className="text-lg leading-8 text-neutral-600 max-w-xl">{isZh ? item.bodyZh : item.body}</p>
+                </div>
               </article>
             ))}
           </div>
@@ -278,7 +299,7 @@ export default function HomePage({ lang }: Props) {
             <img src="/tfv-template/collab-right.jpg" alt="" className="mt-12 aspect-[0.75] h-full w-full object-cover" />
           </div>
           <div className="lg:pl-8">
-            <h2 className="font-serif-brand text-5xl font-semibold leading-tight tracking-normal md:text-7xl">
+            <h2 className="font-serif-brand text-5xl leading-tight tracking-normal md:text-7xl">
               {copy.connectTitle}
             </h2>
             <a

@@ -8,12 +8,11 @@ type SeoProps = {
 };
 
 const baseUrl = "https://thefashionventures.com";
+const socialImageUrl = `${baseUrl}/favicon.png`;
 
 export default function Seo({ lang, path, title, description }: SeoProps) {
   const url = `${baseUrl}${path}`;
-  const altLang = lang === "zh-HK" ? "en" : "zh-HK";
-  const altPath =
-    lang === "zh-HK" ? path.replace("/zh-HK", "/en") : path.replace("/en", "/zh-HK");
+  const canonicalUrl = lang === "zh-HK" ? `${baseUrl}/en/` : url;
 
   return (
     <Head>
@@ -22,16 +21,15 @@ export default function Seo({ lang, path, title, description }: SeoProps) {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={url} />
-      <meta property="og:image" content={`${baseUrl}/tfv-hero.png`} />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:image" content={socialImageUrl} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={`${baseUrl}/tfv-hero.png`} />
-      <link rel="canonical" href={url} />
-      <link rel="alternate" hrefLang={lang} href={url} />
-      <link rel="alternate" hrefLang={altLang} href={`${baseUrl}${altPath}`} />
-      <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/`} />
+      <meta name="twitter:image" content={socialImageUrl} />
+      <link rel="canonical" href={canonicalUrl} />
+      <link rel="alternate" hrefLang="en" href={`${baseUrl}/en/`} />
+      <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/en/`} />
     </Head>
   );
 }

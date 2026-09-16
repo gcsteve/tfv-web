@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Head from "next/head";
 import { useRouter } from "next/router";
 
 type Locale = "zh-HK" | "en";
@@ -26,8 +27,15 @@ export default function RootPage() {
   }, [router]);
 
   return (
-    <div className="grid min-h-screen place-items-center bg-neutral-950 text-white">
-      <p>Redirecting...</p>
-    </div>
+    <>
+      <Head>
+        <title>The Fashion Ventures | Fashion Market Entry and Venture Building</title>
+        <meta name="robots" content="noindex,follow" />
+        <link rel="canonical" href="https://thefashionventures.com/en/" />
+      </Head>
+      <div className="grid min-h-screen place-items-center bg-neutral-950 text-white">
+        <p>Redirecting...</p>
+      </div>
+    </>
   );
 }

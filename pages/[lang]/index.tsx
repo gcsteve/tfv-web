@@ -4,6 +4,7 @@ import { defaultLanguage, languages } from "next-i18next-static-site";
 
 import Layout from "../../components/Layout";
 import Seo from "../../components/Seo";
+import SectionCTA from "../../components/SectionCTA";
 
 type Props = {
   lang: "zh-HK" | "en";
@@ -208,19 +209,19 @@ export default function HomePage({ lang }: Props) {
           </div>
           <div className="relative min-h-[520px] lg:min-h-[680px]">
               <img
-                src="/tfv-template/hero-detail.png"
+                src="/tfv-template/hero-detail.jpg"
                 alt=""
-                className="absolute bottom-0 right-[18%] h-[78%] w-[46%] object-cover"
+                className="absolute bottom-0 right-[38%] h-[78%] w-[56%] object-cover"
               />
               <img
-                src="/tfv-template/262A2329.jpg"
+                src="/tfv-template/262A2308.jpg"
                 alt=""
-                className="absolute right-0 top-5 h-[48%] w-[48%] object-cover"
+                className="absolute right-0 top-5 h-[80%] lg:h-[58%] w-[48%] object-cover object-[25%_25%]"
               />
               <img
                 src="/tfv-template/tfv-logo-black.svg"
                 alt="The Fashion Ventures"
-                className="absolute bottom-[8%] left-0 w-[58%] max-w-[320px]"
+                className="absolute bottom-[8%] left-0 lg:left-[-24%] w-[58%] max-w-[320px]"
               />
             </div>
           </div>
@@ -239,14 +240,14 @@ export default function HomePage({ lang }: Props) {
                   alt=""
                   className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/86 via-black/18 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-6">
+                <div className="hidden absolute inset-0 bg-gradient-to-t from-black/86 via-black/18 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-6 hidden">
                   <h3 className="font-serif-brand text-2xl leading-tight">{event.title}</h3>
                   <p className="mt-2 text-sm text-white/70">{event.date}</p>
-                  {/* <span className="mt-6 inline-flex items-center gap-3 border border-white/70 px-4 py-3 text-xs font-semibold tracking-[0.18em]">
+                  <span className="mt-6 inline-flex items-center gap-3 border border-white/70 px-4 py-3 text-xs font-semibold tracking-[0.18em]">
                     {copy.eventCta}
                     <ArrowUpRight className="h-4 w-4" />
-                  </span> */}
+                  </span>
                 </div>
               </article>
             ))}
@@ -293,24 +294,7 @@ export default function HomePage({ lang }: Props) {
       </section>
 
       <section id="connect" className="bg-[#101010] px-4 py-20 text-white md:py-28">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_0.72fr] lg:items-center">
-          <div className="grid grid-cols-2 gap-4">
-            <img src="/tfv-template/collab-left.jpg" alt="" className="aspect-[0.75] h-full w-full object-cover" />
-            <img src="/tfv-template/collab-right.jpg" alt="" className="mt-12 aspect-[0.75] h-full w-full object-cover" />
-          </div>
-          <div className="lg:pl-8">
-            <h2 className="font-serif-brand text-5xl leading-tight tracking-normal md:text-7xl">
-              {copy.connectTitle}
-            </h2>
-            <a
-              href="mailto:hello@thefashionventures.com"
-              className="mt-10 inline-flex items-center gap-3 border border-white bg-white px-5 py-3 text-sm font-semibold tracking-[0.18em] text-neutral-950 transition hover:bg-transparent hover:text-white"
-            >
-              {copy.connectCta}
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
-          </div>
-        </div>
+        <SectionCTA lang={lang} />
       </section>
     </Layout>
   );

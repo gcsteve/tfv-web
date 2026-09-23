@@ -6,15 +6,15 @@ const nextConfig: NextConfig = {
   agentRules: false,
   output: isStaticExport ? "export" : undefined,
   trailingSlash: true,
-  async redirects() {
-    return [
-      {
-        source: "/zh-HK/",
-        destination: "/en/",
-        permanent: false
-      }
-    ];
-  },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: "/zh-HK/",
+  //       destination: "/en/",
+  //       permanent: false
+  //     }
+  //   ];
+  // },
   env: {
     NEXT_PUBLIC_I18N_LANGUAGES: '["zh-HK","en"]',
     NEXT_PUBLIC_I18N_DEFAULT_LANGUAGE: "zh-HK",

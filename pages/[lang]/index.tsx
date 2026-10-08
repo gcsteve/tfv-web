@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ArrowUpRight } from "lucide-react";
 import { defaultLanguage, languages } from "next-i18next-static-site";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import Layout from "../../components/Layout";
@@ -237,11 +237,14 @@ export default function HomePage({ lang }: Props) {
           </h2>
           <Swiper
             className="events-carousel mt-10"
-            modules={[Autoplay]}
+            modules={[Autoplay, Pagination]}
             loop
             slidesPerGroup={1}
             slidesPerView={1}
             spaceBetween={20}
+            pagination={{
+              clickable: true
+            }}
             speed={850}
             autoplay={{
               delay: 2800,
@@ -249,6 +252,10 @@ export default function HomePage({ lang }: Props) {
               pauseOnMouseEnter: true
             }}
             breakpoints={{
+              576: {
+                slidesPerView: 2,
+                spaceBetween: 20
+              },
               768: {
                 slidesPerView: 3,
                 spaceBetween: 20

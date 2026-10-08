@@ -1,6 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ArrowUpRight } from "lucide-react";
 import { defaultLanguage, languages } from "next-i18next-static-site";
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import Layout from "../../components/Layout";
 import Seo from "../../components/Seo";
@@ -136,6 +138,7 @@ const content = {
 export default function HomePage({ lang }: Props) {
   const copy = content[lang];
   const isZh = lang === "zh-HK";
+  const carouselEvents = [...copy.events, ...copy.events];
 
   return (
     <Layout lang={lang}>
@@ -232,26 +235,47 @@ export default function HomePage({ lang }: Props) {
           <h2 className="font-serif-brand text-4xl tracking-normal md:text-6xl">
             {copy.eventsTitle}
           </h2>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {copy.events.map((event) => (
-              <article key={event.title} className="group relative min-h-[520px] overflow-hidden bg-neutral-950 text-white">
-                <img
-                  src={event.image}
-                  alt=""
-                  className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                />
-                <div className="hidden absolute inset-0 bg-gradient-to-t from-black/86 via-black/18 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-6 hidden">
-                  <h3 className="font-serif-brand text-2xl leading-tight">{event.title}</h3>
-                  <p className="mt-2 text-sm text-white/70">{event.date}</p>
-                  <span className="mt-6 inline-flex items-center gap-3 border border-white/70 px-4 py-3 text-xs font-semibold tracking-[0.18em]">
-                    {copy.eventCta}
-                    <ArrowUpRight className="h-4 w-4" />
-                  </span>
-                </div>
-              </article>
+          <Swiper
+            className="events-carousel mt-10"
+            modules={[Autoplay]}
+            loop
+            slidesPerGroup={1}
+            slidesPerView={1}
+            spaceBetween={20}
+            speed={850}
+            autoplay={{
+              delay: 2800,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true
+            }}
+            breakpoints={{
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 20
+              }
+            }}
+          >
+            {carouselEvents.map((event, index) => (
+              <SwiperSlide key={`${event.title}-${index}`}>
+                <article className="group relative min-h-[520px] overflow-hidden bg-neutral-950 text-white">
+                  <img
+                    src={event.image}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="hidden absolute inset-0 bg-gradient-to-t from-black/86 via-black/18 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-6 hidden">
+                    <h3 className="font-serif-brand text-2xl leading-tight">{event.title}</h3>
+                    <p className="mt-2 text-sm text-white/70">{event.date}</p>
+                    <span className="mt-6 inline-flex items-center gap-3 border border-white/70 px-4 py-3 text-xs font-semibold tracking-[0.18em]">
+                      {copy.eventCta}
+                      <ArrowUpRight className="h-4 w-4" />
+                    </span>
+                  </div>
+                </article>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </section>
 

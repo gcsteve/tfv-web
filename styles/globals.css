@@ -44,6 +44,18 @@ a {
   width: clamp(13rem, 22vw, 26rem);
 }
 
+.events-carousel {
+  overflow: hidden;
+}
+
+.events-carousel .swiper-slide {
+  height: auto;
+}
+
+.events-carousel article {
+  height: 100%;
+}
+
 @media (orientation: portrait) {
   .first-hero-grid {
     grid-template-columns: 1fr;

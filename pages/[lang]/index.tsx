@@ -9,74 +9,10 @@ import Seo from "../../components/Seo";
 import SectionCTA from "../../components/SectionCTA";
 
 type Props = {
-  lang: "zh-HK" | "en";
+  lang: "en";
 };
 
 const content = {
-  // "zh-HK": {
-  //   title: "The Fashion Ventures | 時尚品牌市場拓展與營運平台",
-  //   description:
-  //     "The Fashion Ventures 以品牌策略、市場推廣、數碼渠道、零售執行與跨境物流，協助時尚品牌進入香港及中國市場。",
-  //   heroKicker: "THE FASHION VENTURES",
-  //   heroTitle: "We find the brands people want.",
-  //   heroLines: ["We get them on shelves.", "We make them sell."],
-  //   inquire: "INQUIRE",
-  //   eventsTitle: "Previous Events",
-  //   eventCta: "CHECK IT OUT",
-  //   events: [
-  //     { title: "", date: "", image: "/images/events/event-amalfi.jpg" },
-  //     { title: "", date: "", image: "/images/events/event-winter.jpg" },
-  //     { title: "", date: "", image: "/images/events/event-city.jpg" },
-  //     { title: "", date: "", image: "/images/events/event-262A1263.jpg" },
-  //     { title: "", date: "", image: "/images/events/event-262A1579.jpg" },
-  //     { title: "", date: "", image: "/images/events/event-LEW_9589.jpg" },
-      
-  //   ],
-  //   manifesto:
-  //     "Strategy. Marketing. Digital. Retail. Logistics. All in-house. No outsourcing. No guesswork.",
-  //   manifestoZh:
-  //     "策略、市場推廣、數碼渠道、零售與物流由內部團隊一體化執行。不外判，不靠猜測。",
-  //   capabilitiesTitle: "What we bring to the table.",
-  //   capabilities: [
-  //     {
-  //       title: "Venture Building & Business Strategy",
-  //       body:
-  //         "15+ years launching and scaling ventures across real estate, telecom, hospitality, and retail. We take brands from zero to market - and keep them there.",
-  //       bodyZh:
-  //         "15 年以上跨房地產、電訊、酒店及零售的創業與增長經驗。我們把品牌由零推向市場，並持續建立增長。"
-  //     },
-  //     {
-  //       title: "Market Entry",
-  //       body:
-  //         "6+ years in luxury fashion at Net-a-Porter. We know APAC consumer behavior. We know what sells. We know why.",
-  //       bodyZh:
-  //         "6 年以上 Net-a-Porter 奢侈時尚經驗，熟悉亞太消費者行為，理解產品為何被購買、如何被市場接受。"
-  //     },
-  //     {
-  //       title: "Platform & Digital Marketing",
-  //       body:
-  //         "In-house Xiaohongshu, WeChat, Tmall, and Douyin specialists. Trend analysis. Content planning. Influencer partnerships. Ad placements. Campaigns that convert.",
-  //       bodyZh:
-  //         "內部配置小紅書、微信、天貓與抖音專才，涵蓋趨勢分析、內容規劃、KOL 合作、廣告投放與轉化型 campaign。"
-  //     },
-  //     {
-  //       title: "Retail & Pop-Up Execution",
-  //       body:
-  //         "Strong relationships with major mall operators and multi-brand boutiques across Hong Kong and China. We secure prime space. We manage pop-ups. We handle VIP events.",
-  //       bodyZh:
-  //         "連結香港與中國主要商場營運方及多品牌買手店，協助品牌取得優質零售空間、管理 pop-up，並執行 VIP 活動。"
-  //     },
-  //     {
-  //       title: "Cross-Border Logistics",
-  //       body:
-  //         "Bonded warehousing. Free port policy. Cross-border e-commerce. We move stock efficiently and compliantly into Hong Kong and Mainland China.",
-  //       bodyZh:
-  //         "善用保稅倉、自由港政策與跨境電商模式，協助貨品合規而高效地進入香港及中國內地市場。"
-  //     }
-  //   ],
-  //   connectTitle: "Want to work together?",
-  //   connectCta: "Let's Talk"
-  // },
   en: {
     title: "The Fashion Ventures | Fashion Market Entry and Venture Building",
     description:
@@ -144,8 +80,7 @@ const content = {
 
 export default function HomePage({ lang }: Props) {
   const copy = content[lang];
-  const isZh = lang === "zh-HK";
-  const carouselEvents = copy.events;
+  const carouselEvents: typeof copy.events = copy.events;
 
   return (
     <Layout lang={lang}>
@@ -271,7 +206,7 @@ export default function HomePage({ lang }: Props) {
               }
             }}
           >
-            {carouselEvents.map((event, index) => (
+            {carouselEvents.map((event: typeof carouselEvents[0], index: number) => (
               <SwiperSlide key={`${event.title}-${index}`}>
                 <article className="group relative min-h-[520px] overflow-hidden bg-neutral-950 text-white">
                   <img
@@ -306,7 +241,6 @@ export default function HomePage({ lang }: Props) {
               alt=""
               className="aspect-[1.42] w-full object-cover"
             />
-            {isZh && <p className="mt-6 text-lg leading-8 text-white/68">{copy.manifestoZh}</p>}
           </div>
         </div>
       </section>
@@ -317,7 +251,7 @@ export default function HomePage({ lang }: Props) {
             {copy.capabilitiesTitle}
           </h2>
           <div className="mt-12 border-t border-neutral-950">
-            {copy.capabilities.map((item, index) => (
+            {copy.capabilities.map((item: typeof copy.capabilities[0], index: number) => (
               <article
                 key={item.title}
                 className="grid gap-5 border-b border-neutral-950/22 py-8 md:grid-cols-[90px_1fr] md:items-start"
@@ -325,7 +259,7 @@ export default function HomePage({ lang }: Props) {
                 <p className="font-serif-brand text-3xl text-neutral-400">{String(index + 1).padStart(2, "0")}</p>
                 <div>
                   <h3 className="text-4xl md:text-6xl font-serif-brand leading-tight text-neutral-950">{item.title}</h3>
-                  <p className="text-lg leading-8 text-neutral-600 max-w-xl">{isZh ? item.bodyZh : item.body}</p>
+                  <p className="text-lg leading-8 text-neutral-600 max-w-xl">{item.body}</p>
                 </div>
               </article>
             ))}

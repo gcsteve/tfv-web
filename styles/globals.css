@@ -56,6 +56,23 @@ a {
   height: 100%;
 }
 
+/* Swiper Pagination Custom Styles */
+.events-carousel .swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  background: #000 !important;
+  opacity: 0.3 !important;
+  margin: 0 6px !important;
+  transition: all 0.3s ease;
+}
+
+.events-carousel .swiper-pagination-bullet-active {
+  width: 28px !important;
+  background: #fff !important;
+  opacity: 1 !important;
+  border-radius: 5px !important;
+}
+
 @media (orientation: portrait) {
   .first-hero-grid {
     grid-template-columns: 1fr;

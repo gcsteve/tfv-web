@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-type Locale = "zh-HK" | "en";
+type Locale = "en";
 
 const defaultLanguage: Locale = "en";
 

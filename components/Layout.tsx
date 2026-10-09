@@ -61,12 +61,12 @@ export default function Layout({ lang, children }: LayoutProps) {
                 {item.label}
               </a>
             ))}
-            <Link
+            {/* <Link
               href={getCurrentPathForLang(isZh ? "en" : "zh-HK")}
               className="hidden border border-white/25 px-3 py-2 text-sm text-white transition hover:bg-white hover:text-neutral-950"
             >
               {isZh ? "English" : "繁體中文"}
-            </Link>
+            </Link> */}
           </div>
 
           <button
@@ -92,13 +92,13 @@ export default function Layout({ lang, children }: LayoutProps) {
                   {item.label}
                 </a>
               ))}
-              <Link
+              {/* <Link
                 href={getCurrentPathForLang(isZh ? "en" : "zh-HK")}
                 className="px-2 py-3 text-white/86"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {isZh ? "English" : "繁體中文"}
-              </Link>
+              </Link> */}
             </div>
           </div>
         )}

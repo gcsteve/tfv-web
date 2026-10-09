@@ -13,66 +13,70 @@ type Props = {
 };
 
 const content = {
-  "zh-HK": {
-    title: "The Fashion Ventures | 時尚品牌市場拓展與營運平台",
-    description:
-      "The Fashion Ventures 以品牌策略、市場推廣、數碼渠道、零售執行與跨境物流，協助時尚品牌進入香港及中國市場。",
-    heroKicker: "THE FASHION VENTURES",
-    heroTitle: "We find the brands people want.",
-    heroLines: ["We get them on shelves.", "We make them sell."],
-    inquire: "INQUIRE",
-    eventsTitle: "Previous Events",
-    eventCta: "CHECK IT OUT",
-    events: [
-      { title: "The Amalfi Epoch", date: "June, 2035", image: "/tfv-template/event-amalfi.jpg" },
-      { title: "A Winter's Tale", date: "June, 2035", image: "/tfv-template/event-winter.jpg" },
-      { title: "Shadows of the City's Icon", date: "June, 2035", image: "/tfv-template/event-city.jpg" }
-    ],
-    manifesto:
-      "Strategy. Marketing. Digital. Retail. Logistics. All in-house. No outsourcing. No guesswork.",
-    manifestoZh:
-      "策略、市場推廣、數碼渠道、零售與物流由內部團隊一體化執行。不外判，不靠猜測。",
-    capabilitiesTitle: "What we bring to the table.",
-    capabilities: [
-      {
-        title: "Venture Building & Business Strategy",
-        body:
-          "15+ years launching and scaling ventures across real estate, telecom, hospitality, and retail. We take brands from zero to market - and keep them there.",
-        bodyZh:
-          "15 年以上跨房地產、電訊、酒店及零售的創業與增長經驗。我們把品牌由零推向市場，並持續建立增長。"
-      },
-      {
-        title: "Market Entry",
-        body:
-          "6+ years in luxury fashion at Net-a-Porter. We know APAC consumer behavior. We know what sells. We know why.",
-        bodyZh:
-          "6 年以上 Net-a-Porter 奢侈時尚經驗，熟悉亞太消費者行為，理解產品為何被購買、如何被市場接受。"
-      },
-      {
-        title: "Platform & Digital Marketing",
-        body:
-          "In-house Xiaohongshu, WeChat, Tmall, and Douyin specialists. Trend analysis. Content planning. Influencer partnerships. Ad placements. Campaigns that convert.",
-        bodyZh:
-          "內部配置小紅書、微信、天貓與抖音專才，涵蓋趨勢分析、內容規劃、KOL 合作、廣告投放與轉化型 campaign。"
-      },
-      {
-        title: "Retail & Pop-Up Execution",
-        body:
-          "Strong relationships with major mall operators and multi-brand boutiques across Hong Kong and China. We secure prime space. We manage pop-ups. We handle VIP events.",
-        bodyZh:
-          "連結香港與中國主要商場營運方及多品牌買手店，協助品牌取得優質零售空間、管理 pop-up，並執行 VIP 活動。"
-      },
-      {
-        title: "Cross-Border Logistics",
-        body:
-          "Bonded warehousing. Free port policy. Cross-border e-commerce. We move stock efficiently and compliantly into Hong Kong and Mainland China.",
-        bodyZh:
-          "善用保稅倉、自由港政策與跨境電商模式，協助貨品合規而高效地進入香港及中國內地市場。"
-      }
-    ],
-    connectTitle: "Want to work together?",
-    connectCta: "Let's Talk"
-  },
+  // "zh-HK": {
+  //   title: "The Fashion Ventures | 時尚品牌市場拓展與營運平台",
+  //   description:
+  //     "The Fashion Ventures 以品牌策略、市場推廣、數碼渠道、零售執行與跨境物流，協助時尚品牌進入香港及中國市場。",
+  //   heroKicker: "THE FASHION VENTURES",
+  //   heroTitle: "We find the brands people want.",
+  //   heroLines: ["We get them on shelves.", "We make them sell."],
+  //   inquire: "INQUIRE",
+  //   eventsTitle: "Previous Events",
+  //   eventCta: "CHECK IT OUT",
+  //   events: [
+  //     { title: "", date: "", image: "/images/events/event-amalfi.jpg" },
+  //     { title: "", date: "", image: "/images/events/event-winter.jpg" },
+  //     { title: "", date: "", image: "/images/events/event-city.jpg" },
+  //     { title: "", date: "", image: "/images/events/event-262A1263.jpg" },
+  //     { title: "", date: "", image: "/images/events/event-262A1579.jpg" },
+  //     { title: "", date: "", image: "/images/events/event-LEW_9589.jpg" },
+      
+  //   ],
+  //   manifesto:
+  //     "Strategy. Marketing. Digital. Retail. Logistics. All in-house. No outsourcing. No guesswork.",
+  //   manifestoZh:
+  //     "策略、市場推廣、數碼渠道、零售與物流由內部團隊一體化執行。不外判，不靠猜測。",
+  //   capabilitiesTitle: "What we bring to the table.",
+  //   capabilities: [
+  //     {
+  //       title: "Venture Building & Business Strategy",
+  //       body:
+  //         "15+ years launching and scaling ventures across real estate, telecom, hospitality, and retail. We take brands from zero to market - and keep them there.",
+  //       bodyZh:
+  //         "15 年以上跨房地產、電訊、酒店及零售的創業與增長經驗。我們把品牌由零推向市場，並持續建立增長。"
+  //     },
+  //     {
+  //       title: "Market Entry",
+  //       body:
+  //         "6+ years in luxury fashion at Net-a-Porter. We know APAC consumer behavior. We know what sells. We know why.",
+  //       bodyZh:
+  //         "6 年以上 Net-a-Porter 奢侈時尚經驗，熟悉亞太消費者行為，理解產品為何被購買、如何被市場接受。"
+  //     },
+  //     {
+  //       title: "Platform & Digital Marketing",
+  //       body:
+  //         "In-house Xiaohongshu, WeChat, Tmall, and Douyin specialists. Trend analysis. Content planning. Influencer partnerships. Ad placements. Campaigns that convert.",
+  //       bodyZh:
+  //         "內部配置小紅書、微信、天貓與抖音專才，涵蓋趨勢分析、內容規劃、KOL 合作、廣告投放與轉化型 campaign。"
+  //     },
+  //     {
+  //       title: "Retail & Pop-Up Execution",
+  //       body:
+  //         "Strong relationships with major mall operators and multi-brand boutiques across Hong Kong and China. We secure prime space. We manage pop-ups. We handle VIP events.",
+  //       bodyZh:
+  //         "連結香港與中國主要商場營運方及多品牌買手店，協助品牌取得優質零售空間、管理 pop-up，並執行 VIP 活動。"
+  //     },
+  //     {
+  //       title: "Cross-Border Logistics",
+  //       body:
+  //         "Bonded warehousing. Free port policy. Cross-border e-commerce. We move stock efficiently and compliantly into Hong Kong and Mainland China.",
+  //       bodyZh:
+  //         "善用保稅倉、自由港政策與跨境電商模式，協助貨品合規而高效地進入香港及中國內地市場。"
+  //     }
+  //   ],
+  //   connectTitle: "Want to work together?",
+  //   connectCta: "Let's Talk"
+  // },
   en: {
     title: "The Fashion Ventures | Fashion Market Entry and Venture Building",
     description:
@@ -84,9 +88,12 @@ const content = {
     eventsTitle: "Previous Events",
     eventCta: "CHECK IT OUT",
     events: [
-      { title: "The Amalfi Epoch", date: "June, 2035", image: "/tfv-template/event-amalfi.jpg" },
-      { title: "A Winter's Tale", date: "June, 2035", image: "/tfv-template/262A2819.jpg" },
-      { title: "Shadows of the City's Icon", date: "June, 2035", image: "/tfv-template/event-city.jpg" }
+      { title: "", date: "", image: "/images/events/event-amalfi.jpg" },
+      { title: "", date: "", image: "/images/events/event-winter.jpg" },
+      { title: "", date: "", image: "/images/events/event-city.jpg" },
+      { title: "", date: "", image: "/images/events/event-262A1263.jpg" },
+      { title: "", date: "", image: "/images/events/event-262A1579.jpg" },
+      { title: "", date: "", image: "/images/events/event-LEW_9589.jpg" },
     ],
     manifesto:
       "Strategy. Marketing. Digital. Retail. Logistics. All in-house. No outsourcing. No guesswork.",
@@ -138,7 +145,7 @@ const content = {
 export default function HomePage({ lang }: Props) {
   const copy = content[lang];
   const isZh = lang === "zh-HK";
-  const carouselEvents = [...copy.events, ...copy.events];
+  const carouselEvents = copy.events;
 
   return (
     <Layout lang={lang}>
@@ -238,6 +245,7 @@ export default function HomePage({ lang }: Props) {
           <Swiper
             className="events-carousel mt-10"
             modules={[Autoplay, Pagination]}
+            
             loop
             slidesPerGroup={1}
             slidesPerView={1}
@@ -245,6 +253,7 @@ export default function HomePage({ lang }: Props) {
             pagination={{
               clickable: true
             }}
+            
             speed={850}
             autoplay={{
               delay: 2800,
@@ -270,7 +279,7 @@ export default function HomePage({ lang }: Props) {
                     alt=""
                     className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
-                  <div className="hidden absolute inset-0 bg-gradient-to-t from-black/86 via-black/18 to-transparent" />
+                  {/* <div className="hidden absolute inset-0 bg-gradient-to-t from-black/86 via-black/18 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-6 hidden">
                     <h3 className="font-serif-brand text-2xl leading-tight">{event.title}</h3>
                     <p className="mt-2 text-sm text-white/70">{event.date}</p>
@@ -278,7 +287,7 @@ export default function HomePage({ lang }: Props) {
                       {copy.eventCta}
                       <ArrowUpRight className="h-4 w-4" />
                     </span>
-                  </div>
+                  </div> */}
                 </article>
               </SwiperSlide>
             ))}

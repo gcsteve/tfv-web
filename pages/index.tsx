@@ -30,11 +30,19 @@ export default function RootPage() {
     <>
       <Head>
         <title>The Fashion Ventures | Fashion Market Entry and Venture Building</title>
+        <meta
+          name="description"
+          content="Bridging Global Fashion. Cross-border Specialist and Investor. Helping local brands find their international voice."
+        />
         <meta name="robots" content="noindex,follow" />
         <link rel="canonical" href="https://thefashionventures.com/en/" />
       </Head>
       <div className="grid min-h-screen place-items-center bg-neutral-950 text-white">
-        <p>Redirecting...</p>
+        <img
+          src="/images/Logo-TFV.svg"
+          alt="The Fashion Ventures"
+          className="first-hero-logo pointer-events-none absolute left-1/2 top-1/2 z-10 h-auto -translate-x-1/2 -translate-y-1/2"
+        />
       </div>
     </>
   );

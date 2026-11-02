@@ -16,7 +16,7 @@ const content = {
   en: {
     title: "The Fashion Ventures | Fashion Market Entry and Venture Building",
     description:
-      "The Fashion Ventures helps fashion brands enter Hong Kong and China through strategy, marketing, digital platforms, retail execution, and cross-border logistics.",
+      "Bridging Global Fashion. Cross-border Specialist and Investor. Helping local brands find their international voice.",
     heroKicker: "THE FASHION VENTURES",
     heroTitle: "We find the brands people want.",
     heroLines: ["We get them on shelves.", "We make them sell."],
